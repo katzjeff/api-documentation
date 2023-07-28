@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>GARDEN API Documentation</title>
+    <meta name="description" content="" />
+    <meta name="author" content="ticlekiwi" />
+
+    <meta http-equiv="cleartype" content="on" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="css/hightlightjs-dark.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300&family=Source+Code+Pro:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" media="all" />
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+  </head>
+
+  <body class="one-content-column-version">
+    <div class="left-menu">
+      <div class="content-logo">
+        <div class="logo">
+          <img
+            alt="platform by Emily van den Heever from the Noun Project"
+            title="platform by Emily van den Heever from the Noun Project"
+            src="images/logo.png"
+            height="32"
+          />
+          <span>GARDEN API Documentation</span>
+        </div>
+        <button class="burger-menu-icon" id="button-menu-mobile">
+          <svg width="34" height="34" viewBox="0 0 100 100">
+            <path
+              class="line line1"
+              d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058"
+            ></path>
+            <path class="line line2" d="M 20,50 H 80"></path>
+            <path
+              class="line line3"
+              d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942"
+            ></path>
+          </svg>
+        </button>
+      </div>
+      <div class="mobile-menu-closer"></div>
+      <div class="content-menu">
+        <div class="content-infos">
+          <div class="info"><b>Version:</b> 1.0.1</div>
+          <div class="info"><b>Last Updated:</b> 28th July, 2023</div>
+        </div>
+        <ul>
+          <li class="scroll-to-link active" data-target="content-get-started">
+            <a>GET STARTED</a>
+          </li>
+          <li class="scroll-to-link" data-target="content-get-plants-flowers">
+            <a>Get All Plants/Flowers</a>
+          </li>
+          <li class="scroll-to-link" data-target="content-get-single-plant">
+            <a>Get Individual Plant or Flower using ID</a>
+          </li>
+          <li class="scroll-to-link" data-target="content-create-plant">
+            <a>Create a New Plant or Flower</a>
+          </li>
+          <!-- <li class="scroll-to-link" data-target="content-search-plants">
+            <a>Search for Plants or Flowers with various attributes</a>
+          </li> -->
+          <li class="scroll-to-link" data-target="content-errors">
+            <a>Errors</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="content-page">
+      <div class="content">
+        <!-- Get Started routes -->
+        <div class="overflow-hidden content-section" id="content-get-started">
+          <h1>Get Started</h1>
+          <p>
+            Garden API is a comprehensive API that can be used to access
+            information a list of plants and flowers
+          </p>
+          <p>
+            To use this API, you need an <strong>API key</strong>. Please
+            contact us at
+            <a href="mailto:jon.snow@nightswatch.wes">info@gardenapi.com</a>
+            to get your own API key.
+          </p>
+        </div>
+
+        <!-- Get All Plants -->
+        <div
+          class="overflow-hidden content-section"
+          id="content-get-plants-flowers">
+        
+          <h2>Get All Plants</h2>
+          <p>
+            To get a list of all plants and flowers, make a GET request from the
+            following URL :<br />
+            <code class="higlighted break-word"
+              >https://garden-api-fzyw.onrender.com/plants</code>
+            
+          </p>
+          <br/>
+          </p>
+        </div>
+
+        <!-- Get Individual plant or flower using ID -->
+        <div
+          class="overflow-hidden content-section"
+          id="content-get-single-plant"
+        >
+          <h2>Get Individual Plant or Flower using ID</h2>
+          <p>
+            To get an Individual plant or flower, make a GET request from the
+            following URL, with the plant id :<br />
+            <code class="higlighted break-word"
+              >https://garden-api-fzyw.onrender.com/id</code
+            >
+          </p>
+          <br />
+          <h4>QUERY PARAMETERS</h4>
+          <table>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>id</td>
+                <td>String</td>
+                <td>plant/flower id</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          Example:<br />
+          <code class="higlighted break-word"
+            >https://garden-api-fzyw.onrender.com/64a3d3f17ae35cbe01d63bbc</code
+          >
+        </p>
+
+        <!-- Create a new plant or flower -->
+        <div class="overflow-hidden content-section" id="content-create-plant">
+          <h2>Create a new plant or flower</h2>
+          <p>
+            To create a new plant or flower, make a POST request to the
+            following URL :<br />
+            <code class="higlighted break-word"
+              >https://garden-api-fzyw.onrender.com/plants</code
+            >
+          </p>
+          <br />
+          <h4>REQUEST BODY PARAMETERS</h4>
+          <table>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>botanicalName</td>
+                <td>String</td>
+                <td>Plant Botanical Name.(Required)</td>
+              </tr>
+              <tr>
+                <td>plantName</td>
+                <td>String</td>
+                <td>General plant name.(Required)</td>
+              </tr>
+              <tr>
+                <td>description</td>
+                <td>String</td>
+                <td>A string that describes the plant or flower:(Required)</td>
+              </tr>
+              <tr>
+                <td>flowerColor</td>
+                <td>String</td>
+                <td>Color of the flower if any.(Required)</td>
+              </tr>
+              <tr>
+                <td>nativeRegion</td>
+                <td>String</td>
+                <td>
+                  Native region in which the plant originates or grows
+                  predominately.(Required)
+                </td>
+              </tr>
+              <tr>
+                <td>growthHabits</td>
+                <td>String</td>
+                <td>When the plants grows...annual or perennial (Required)</td>
+              </tr>
+              <tr>
+                <td>foodNutrients</td>
+                <td>String</td>
+                <td>
+                  What nutrients the flower has for pollinators - Pollen or
+                  Nectar (Required)
+                </td>
+              </tr>
+              <tr>
+                <td>waterRequirements</td>
+                <td>String</td>
+                <td>
+                  Levels of water suitable for the growth of the flower or plant
+                  (Required)
+                </td>
+              </tr>
+              <tr>
+                <td>companionPlants</td>
+                <td>String</td>
+                <td>
+                  Types of other plants that can be grown with the given plant
+                  or flower (Required)
+                </td>
+              </tr>
+              <tr>
+                <td>bloomingTimes</td>
+                <td>String</td>
+                <td>Which session do the plants bloom (Required)</td>
+              </tr>
+              <tr>
+                <td>plantHeight</td>
+                <td>String</td>
+                <td>
+                  What height the plant/flower grows to in Inches or CM
+                  (Required)
+                </td>
+              </tr>
+              <tr>
+                <td>imgUrl</td>
+                <td>String</td>
+                <td>Url for a picture of the plant or flower(Required)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Summary of error codes -->
+        <div class="overflow-hidden content-section" id="content-errors">
+          <h2>Errors</h2>
+          <p>The Garden API uses the following error codes:</p>
+          <table>
+            <thead>
+              <tr>
+                <th>Error Code</th>
+                <th>Meaning</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>400</td>
+                <td>
+                  Bad Request. A status code of 400 indicates that the server
+                  did not understand the request due to bad syntax.
+                </td>
+              </tr>
+              <tr>
+                <td>401</td>
+                <td>Unauthorized</td>
+              </tr>
+              <tr>
+                <td>404</td>
+                <td>The requested resource was not found at the URL given.</td>
+              </tr>
+              <tr>
+                <td>409</td>
+                <td>
+                  The request could not be processed because of conflict in the
+                  current state of the resource.
+                </td>
+              </tr>
+              <!-- <tr>
+                <td>X003</td>
+                <td>
+                  Unknown or unvalid user <code class="higlighted">token</code>.
+                  This error appears if you use an unknow user
+                  <code class="higlighted">token</code> or if the user
+                  <code class="higlighted">token</code> expired.
+                </td>
+              </tr> -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
